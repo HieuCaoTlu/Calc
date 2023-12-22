@@ -59,10 +59,10 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun Calculator() {
+    // Tạo các biến phục vụ
     var number1 by remember { mutableStateOf("") }
     var number2 by remember { mutableStateOf("") }
     var result by remember { mutableStateOf(0f) }
@@ -94,7 +94,10 @@ fun Calculator() {
             NumberInput("thứ hai", number2, onValueChange = {number2 = it})
             Spacer(modifier = Modifier.height(20.dp))
             Button(
-                onClick = {result = number1.toFloat() + number2.toFloat()
+                onClick = {
+                    val n1 = if (number1.isNullOrEmpty()) 0f else number1.toFloat()
+                    val n2 = if (number2.isNullOrEmpty()) 0f else number2.toFloat()
+                    result = n1 + n2
                     hideKey?.hide()
                     showResult = true},
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF749BC2)),
