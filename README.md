@@ -2,6 +2,7 @@
 - Giao diện của ứng dụng được xây dựng bằng bộ công cụ **Jetpack Compose** - mọi giao diện sẽ được xây
   dựng bằng hàm kiểu Kotlin và **giao tiếp trực tiếp** với các biến thông qua **sự thay đổi các trạng thái**.
 - Không cần sử dụng XML hay LayoutEditor để xây dựng giao diện.
+  (Em có tạo 1 App dự phòng sử dụng XML, thầy có thể xem qua: https://github.com/HieuCaoTlu/Calc_XML.git)
 - Các hàm giao diện này được gắn nhãn @Composable, chúng được định nghĩa và gọi ngay bên trong MainActivity.kt.
   Khi chạy, chúng được **gọi bất kì chứ không tuần tự**. Mỗi khi người dùng **tạo ra 1 sự kiện** nào đó, nó sẽ ảnh hưởng
   đến **trạng thái**, từ đó một số **hàm giao diện được gọi lại** để thay đổi.
